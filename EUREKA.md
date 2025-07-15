@@ -16,6 +16,6 @@
 
    **Este archivo es único para cada cuenta**
 
-   <img width="886" height="417" alt="image" src="https://github.com/user-attachments/assets/f15a40cb-295a-4ff7-8ce9-0be663df2450" />
+   ![HTB Dashboard]<img width="886" height="417" alt="image" src="https://github.com/user-attachments/assets/f15a40cb-295a-4ff7-8ce9-0be663df2450" />
 
 3. 
