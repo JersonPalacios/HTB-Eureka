@@ -247,20 +247,20 @@
           }
          }
         }'
-   ´´´
+  ´´´
 
-   Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
+  Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
 
 
-   Ahora configuramos un listener para poder capturar credenciales:
+  Ahora configuramos un listener para poder capturar credenciales:
 
-   Abrimos con ´netcat´
+  Abrimos con ´netcat´
 
-   ```bash
+  ```bash
     rlwrap nc -nlvp 8081
-   ```
+  ```
 
-   <img width="782" height="407" alt="image" src="https://github.com/user-attachments/assets/03f73914-e656-4e2b-a9c9-af155f5a2a7a" />
+  <img width="782" height="407" alt="image" src="https://github.com/user-attachments/assets/03f73914-e656-4e2b-a9c9-af155f5a2a7a" />
 
 ### 15. Acceso por SSH como "miranda-wise"
 
