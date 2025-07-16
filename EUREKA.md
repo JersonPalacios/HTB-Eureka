@@ -5,7 +5,7 @@
 **Dirección IP**: 10.10.11.66  
 **Fecha Pwned**: 15 Jul 2025
 
-###1. Primero ingresamos a la pagina de Hack The Box: https://www.hackthebox.com/ con nuestro respectivo usuario.
+## 1. Primero ingresamos a la pagina de Hack The Box: https://www.hackthebox.com/ con nuestro respectivo usuario.
    
    **USUARIO**: jeax1415
    
