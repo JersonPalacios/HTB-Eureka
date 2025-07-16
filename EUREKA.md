@@ -131,13 +131,13 @@
     Primero creamos un pequeño wordlist para fuzzear posibles rutas sensibles:
     
     ```bash
-    echo -e "actuator\nactuator/env\nactuator/heapdump\nactuator/beans\nactuator/info\nactuator/metrics" > tiny.txt
+     echo -e "actuator\nactuator/env\nactuator/heapdump\nactuator/beans\nactuator/info\nactuator/metrics" > tiny.txt
     ```
 
     y luego lanzamos ´ffuf´ contra 'furni.htb´
 
     ```bash
-    ffuf -u http://furni.htb/FUZZ -w tiny.txt -o ffuf_actuator.txt
+     ffuf -u http://furni.htb/FUZZ -w tiny.txt -o ffuf_actuator.txt
     ```
    
    <img width="762" height="536" alt="image" src="https://github.com/user-attachments/assets/3f7db983-2ef9-4cdc-8735-3b67416ad60e" />
