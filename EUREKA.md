@@ -68,6 +68,24 @@
 
    <img width="886" height="369" alt="image" src="https://github.com/user-attachments/assets/143d8e83-9164-47cc-a32f-c6484bd00849" />
 
+### 7. Configuramos el dominio en /etc/hosts
+
+   Como observamos en el resultado del escaneo con nmap, el servidor HTTP hace un redireccionamiento a ´http://furni.htb´. Para que este dominio sea reconocible en nuestra máquina local (Kali Linux), debemos         añadirlo al archivo ´/etc/hosts´ apuntando a la IP de la máquina:
+
+   ```bash
+   sudo nano /etc/hosts
+   ```
+
+   Y añadimos la siguiente línea al final del archivo:
+
+   ```bash
+   10.10.11.66 furni.htb
+   ```
+
+   <img width="886" height="444" alt="image" src="https://github.com/user-attachments/assets/ad5baeb1-6c3d-4729-be16-d0ce86557685" />
+
+
+
 
 
 
