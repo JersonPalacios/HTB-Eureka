@@ -203,31 +203,31 @@
 
 ### 14. Túnel SSH hacia Eureka 
 
-   Al ejecutar ss -tlnp | grep LISTEN dentro de la máquina Eureka, encontramos que el puerto 8761 está en escucha desde cualquier interfaz (*:8761). Este puerto corresponde al servicio Eureka (Service Discovery     de Spring Cloud).
+  Al ejecutar ss -tlnp | grep LISTEN dentro de la máquina Eureka, encontramos que el puerto 8761 está en escucha desde cualquier interfaz (*:8761). Este puerto corresponde al servicio Eureka (Service Discovery     de Spring Cloud).
 
-   Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
+  Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
 
-   ```bash
+  ```bash
     ssh -N -L 8761:localhost:8761 oscar190@furni.htb
-   ```
+  ```
 
-   <img width="805" height="265" alt="image" src="https://github.com/user-attachments/assets/39a1e345-6c2c-4401-a4ae-a07aae2ebaa8" />
+  <img width="805" height="265" alt="image" src="https://github.com/user-attachments/assets/39a1e345-6c2c-4401-a4ae-a07aae2ebaa8" />
 
-   Ahora accedemos al panel Eureka, abrimos el navegador en:
+  Ahora accedemos al panel Eureka, abrimos el navegador en:
 
-   ```bash
+  ```bash
     http://localhost:8761
-   ```
+  ```
 
-   Podemos ver el panel de Eureka Server, aqui están registrados los microservicios. 
+  Podemos ver el panel de Eureka Server, aqui están registrados los microservicios. 
    
-   El objetivo será inyectar un servicio falso que apunte a mi  propia IP y nos entregue información o incluso acceso.
+  El objetivo será inyectar un servicio falso que apunte a mi  propia IP y nos entregue información o incluso acceso.
 
-   <img width="1472" height="783" alt="image" src="https://github.com/user-attachments/assets/c713fec7-ca03-43e8-95dd-82b6c04edef1" />
+  <img width="1472" height="783" alt="image" src="https://github.com/user-attachments/assets/c713fec7-ca03-43e8-95dd-82b6c04edef1" />
 
-   Ahora hacemos la peticion ´curl´ para poder registrar el servicio
+  Ahora hacemos la peticion ´curl´ para poder registrar el servicio
 
-   ```bash
+  ```bash
     curl -X POST \
     http://EurekaSrvr:0scarPWDisTheB3st@localhost:8761/eureka/apps/USER-MANAGEMENT-SERVICE \
     -H 'Content-Type: application/json' \
