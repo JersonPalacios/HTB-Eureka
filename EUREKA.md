@@ -60,7 +60,7 @@
 
 ### 6. Enumeración de servicios
 
-    Continuamos con un escaneo básico con nmap para poder identificar los servicios expuestos en la máquina Eureka.
+   Continuamos con un escaneo básico con nmap para poder identificar los servicios expuestos en la máquina Eureka.
 
    ```bash
    nmap -sCV -Pn -T4 -oN eureka-nmap.txt 10.10.11.66 
