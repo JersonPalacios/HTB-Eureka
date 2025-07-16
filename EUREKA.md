@@ -18,5 +18,12 @@
 
    <img width="886" height="417" alt="image" src="https://github.com/user-attachments/assets/f15a40cb-295a-4ff7-8ce9-0be663df2450" />
 
+3. Ahora nos conectamos  a la red de HTB desde kali
 
+   Una vez descargado el archivo `.ovpn`, lo utilizamos para establecer una conexión segura con la red privada de Hack The Box usando `openvpn`:
+
+   ```bash
+sudo openvpn htb.ovpn
+
+   
 
