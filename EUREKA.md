@@ -41,4 +41,13 @@
    Dirección IP: `10.10.11.66`
 
    
+   <img width="886" height="439" alt="image" src="https://github.com/user-attachments/assets/86f6efd6-e154-467f-bf33-d9761ce9c386" />
+   
+   <img width="886" height="401" alt="image" src="https://github.com/user-attachments/assets/067a8881-0153-4a9b-bcb4-703c562211ad" />
+
+   
+
+
+
+   
 
