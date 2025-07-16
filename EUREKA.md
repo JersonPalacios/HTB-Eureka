@@ -23,8 +23,15 @@
    Una vez descargado el archivo `.ovpn`, lo utilizamos para establecer una conexión segura con la red privada de Hack The Box usando `openvpn`:
 
    ```bash
-   sudo openvpn htb.ovpn
+   sudo openvpn NOMBRE_ARCHIVO.ovpn
    ```
+
+   Al ejecutarlo correctamente, veremos un mensaje como:
+   
+   ```bash
+   Initialization Sequence Completed
+   ```
+   <img width="886" height="105" alt="image" src="https://github.com/user-attachments/assets/97795db7-2cf5-4823-8019-d0a860e0a745" />
 
    
 
