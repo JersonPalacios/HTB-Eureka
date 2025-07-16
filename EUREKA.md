@@ -189,3 +189,9 @@
 
    <img width="957" height="768" alt="image" src="https://github.com/user-attachments/assets/a2f98c25-0dcb-4fee-8bfc-358b54d68262" />
 
+
+  Ahora revisamos que servicios estan expuestos en localhost con:
+
+  ```bash
+    ss -tlnp | grep LISTEN
+  ```
