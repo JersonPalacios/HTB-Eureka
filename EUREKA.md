@@ -33,7 +33,9 @@
    ```
    <img width="871" height="77" alt="image" src="https://github.com/user-attachments/assets/1901bce8-1db2-4eff-bf44-9bc2d90a7f8c" />
 
-### 4. Una vez conectados a la red VPN de Hack The Box, nos dirigimos a la sección **"Machines"** para elegir una máquina activa que deseamos atacar. En este caso, seleccionamos la máquina:
+### 4. Selección de la máquina objetivo 
+   
+   Una vez conectados a la red VPN de Hack The Box, nos dirigimos a la sección **"Machines"** para elegir una máquina activa que deseamos atacar. En este caso, seleccionamos la máquina:
    **Eureka**  
    Dificultad: Hard  
    Dirección IP: `10.10.11.66`
