@@ -245,8 +245,8 @@
             "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
             "name": "MyOwn"
           }
-        }
-       }'
+         }
+        }'
    ´´´
 
    Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
