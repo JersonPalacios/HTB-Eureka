@@ -193,9 +193,9 @@
 
   Ahora revisamos que servicios estan expuestos en localhost con:
 
-  ```bash
+   ```bash
     ss -tlnp | grep LISTEN
-  ```
+   ```
 
   <img width="620" height="183" alt="image" src="https://github.com/user-attachments/assets/e6397b5a-2940-4856-9bb4-14182d2b69bf" />
 
@@ -297,7 +297,8 @@
     ```bash
     find /opt -type f -name "*.sh" -executable 2>/dev/null
     ´´´
-  <img width="772" height="35" alt="image" src="https://github.com/user-attachments/assets/feabd045-9bbb-41de-be62-e9715436d9c4" />
+
+   <img width="772" height="35" alt="image" src="https://github.com/user-attachments/assets/feabd045-9bbb-41de-be62-e9715436d9c4" />
 
 
   Como podemos observar en la imagen no devolvió nada ejecutable, pero entonces hicimos una búsqueda por nombre:
