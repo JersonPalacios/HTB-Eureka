@@ -1,9 +1,8 @@
 # Hack The Box - Eureka
 **Plataforma**: HackTheBox  
-**Nivel**: Hard  
-**Sistema operativo**: Linux  
+**Nivel**: Hard    
 **Dirección IP**: 10.10.11.66  
-**Fecha Pwned**: 15 Jul 2025
+**Fecha**: 15 Jul 2025
 
 ### 1. Primero ingresamos a la pagina de Hack The Box: https://www.hackthebox.com/ con nuestro respectivo usuario.
    
@@ -287,7 +286,7 @@
      -bash-5.0$
    ```
 
-### 16. Busqueda de una posibilidad de posibles vectores de escalada
+### 16. Búsqueda de una posibilidad de posibles vectores de escalada
 
 
    Con acceso como miranda-wise, intentamos identificar procesos o scripts que se estén ejecutando con privilegios elevados o desde cron.
@@ -351,7 +350,7 @@
 
 ### 19. Datos de llenado en el HTB
 
-   Ahora cnoseguimos el submit User Fkag y el Submit Root Flag
+   Ahora conseguimos el submit User Flag y el Submit Root Flag
 
    Para hallar el Submit Root Flag usamos:
 
@@ -362,7 +361,7 @@
    <img width="308" height="67" alt="image" src="https://github.com/user-attachments/assets/eba0bad5-2736-48d7-92ca-dde9468226cf" />
 
   
-   Y para el Submit User Fkag usamos:
+   Y para el Submit User Flag usamos:
 
    ```bash
       cat /home/miranda-wise/user.txt
@@ -373,7 +372,7 @@
 
 ### 20. RESULTADOS
 
-   **Submit User Fkag** : 3da73a3cc60adc2bb7eba02ddf9ab568
+   **Submit User Flag** : 3da73a3cc60adc2bb7eba02ddf9ab568
    
    **Submit Root Flag** : 1d45c0ffd66c1dc33ef7cd2f0ef4c038
 
