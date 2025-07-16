@@ -58,6 +58,16 @@
 
    <img width="886" height="348" alt="image" src="https://github.com/user-attachments/assets/e6fa170e-5fa1-4393-8b71-7fb747ce3723" />
 
+### 6. Enumeración de servicios
+
+    Continuamos con un escaneo básico con nmap para poder identificar los servicios expuestos en la máquina Eureka.
+
+   ```bash
+   nmap -sCV -Pn -T4 -oN eureka-nmap.txt 10.10.11.66 
+   ```
+    
+    <img width="886" height="369" alt="image" src="https://github.com/user-attachments/assets/620b1233-88f5-40e7-9d94-e30e13504d19" />
+
 
 
    
