@@ -384,7 +384,11 @@
    <img width="886" height="393" alt="image" src="https://github.com/user-attachments/assets/fd2d80b9-c497-4aa1-888a-421699144270" />
 
 
-   Y como ultimo obtenemos que el reto fue exitoso
+
+
+   Y como ultimo obtenemos que el reto fue exitoso:
+
+   
    
 
   <img width="1427" height="676" alt="image" src="https://github.com/user-attachments/assets/70d7cf75-8fda-4a7f-a5ec-5cdda9003cbc" />
