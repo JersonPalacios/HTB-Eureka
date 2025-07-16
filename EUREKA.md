@@ -88,9 +88,9 @@
 
    Una vez añadido el dominio, abrimos nuestro navegador en Kali y visitamos:
 
-    ```bash
+   ```bash
     http://furni.htb
-    ```
+   ```
 
    Ahora veremos una página web de una tienda de muebles con interfaz moderna. 
    
