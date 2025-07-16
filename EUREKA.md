@@ -272,9 +272,9 @@
 
    Ahora probamos el acceso por SSH:
 
-    ```bash
-    ssh miranda-wise@10.10.11.66
-    ´´´
+   ```bash
+     ssh miranda-wise@10.10.11.66
+   ´´´
 
    <img width="886" height="580" alt="image" src="https://github.com/user-attachments/assets/c62693b5-812c-4d47-879d-fabaf641c73f" />
 
@@ -283,9 +283,9 @@
 
    Podemos observar q tenemos el acceso exitoso con la salida de:
    
-    ```bash
-    -bash-5.0$
-    ´´´
+   ```bash
+     -bash-5.0$
+   ´´´
 
 ### 16. Busqueda de una posibilidad de posibles vectores de escalada
 
