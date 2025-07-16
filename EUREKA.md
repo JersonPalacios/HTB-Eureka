@@ -347,3 +347,48 @@
    <img width="722" height="188" alt="image" src="https://github.com/user-attachments/assets/bdaf1426-d511-4cc3-8656-5a25fc9e373d" />
 
    Con esto podemos tener el acceso total a la maquina
+
+### 19. Datos de llenado en el HTB
+
+   Ahora cnoseguimos el submit User Fkag y el Submit Root Flag
+
+   Para hallar el Submit Root Flag usamos:
+
+     ```bash
+      cat /root/root.txt
+     ´´´
+
+   <img width="308" height="67" alt="image" src="https://github.com/user-attachments/assets/eba0bad5-2736-48d7-92ca-dde9468226cf" />
+
+  
+   Y para el Submit User Fkag usamos:
+
+     ```bash
+      cat /home/miranda-wise/user.txt
+     ´´´
+   
+   <img width="386" height="70" alt="image" src="https://github.com/user-attachments/assets/c118b8c3-c2c3-44cc-83b0-79bd4aa0fc26" />
+
+
+### 20. RESULTADOS
+
+   **Submit User Fkag** : 3da73a3cc60adc2bb7eba02ddf9ab568
+   
+   **Submit Root Flag** : 1d45c0ffd66c1dc33ef7cd2f0ef4c038
+
+
+   <img width="886" height="420" alt="image" src="https://github.com/user-attachments/assets/ea10a4ff-0276-4138-b7a9-94e287dcbeda" />
+
+
+   <img width="886" height="393" alt="image" src="https://github.com/user-attachments/assets/fd2d80b9-c497-4aa1-888a-421699144270" />
+
+
+   Y como ultimo obtenemos que el reto fue exitoso
+   
+
+  <img width="1427" height="676" alt="image" src="https://github.com/user-attachments/assets/70d7cf75-8fda-4a7f-a5ec-5cdda9003cbc" />
+
+
+  <img width="1705" height="773" alt="image" src="https://github.com/user-attachments/assets/9f46f398-d57b-4730-9ef5-c8608d7e9f0d" />
+
+
