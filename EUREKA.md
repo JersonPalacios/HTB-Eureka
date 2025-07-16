@@ -112,6 +112,15 @@
 
    Esto nos permitara poder mantener todos los archivos relacionados con Eureka separados y ordenados
 
+### 10. Enumeración de rutas con ´ffuf´
+
+   Una vez que configuramos el dominio ´furni.htb´ en ´/etc/hosts´ y estando dentro del directorio ´~/HTB/Eureka´, se ejecuta un escaneo de rutas con ´ffuf´:
+   
+   ```bash
+    ffuf -u http://furni.htb/FUZZ -w /usr/share/wordlists/dirb/common.txt -e .php,.html,.txt -o ffuf_furni.txt
+   ```
+
+   <img width="910" height="672" alt="image" src="https://github.com/user-attachments/assets/ddc2285c-fc2e-4770-99f5-b0a2bde9c159" />
 
 
 
