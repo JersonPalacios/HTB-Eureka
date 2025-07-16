@@ -31,7 +31,8 @@
    ```bash
    Initialization Sequence Completed
    ```
-   <img width="886" height="105" alt="image" src="https://github.com/user-attachments/assets/97795db7-2cf5-4823-8019-d0a860e0a745" />
+   <img width="871" height="77" alt="image" src="https://github.com/user-attachments/assets/1901bce8-1db2-4eff-bf44-9bc2d90a7f8c" />
+
 
    
 
