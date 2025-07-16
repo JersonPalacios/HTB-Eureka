@@ -101,6 +101,17 @@
 
 
 
+### 9. Organizamos el entorno 
+
+   Antes de comenzar con los análisis, organizamos un entorno limpio para trabajar con esta máquina:
+
+   ```bash
+    mkdir ~/HTB/Eureka
+    cd ~/HTB/Eureka
+   ```
+
+   Esto nos permitara poder mantener todos los archivos relacionados con Eureka separados y ordenados
+
 
 
 
