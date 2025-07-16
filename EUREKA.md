@@ -38,12 +38,27 @@
    Una vez conectados a la red VPN de Hack The Box, nos dirigimos a la sección **"Machines"** para elegir una máquina activa que deseamos atacar. En este caso, seleccionamos la máquina:
    **Eureka**  
    Dificultad: Hard  
-   Dirección IP: `10.10.11.66`
 
-   
    <img width="886" height="439" alt="image" src="https://github.com/user-attachments/assets/86f6efd6-e154-467f-bf33-d9761ce9c386" />
    
+   Dirección IP: `10.10.11.66`
+   
    <img width="886" height="401" alt="image" src="https://github.com/user-attachments/assets/067a8881-0153-4a9b-bcb4-703c562211ad" />
+
+
+### 5. Confirmación de conección
+
+    Una vez conectado, podemos confirmar que estamos en la red de HTB usando:
+
+   ```bash
+   ip a 
+   ```
+
+   Debemos ver una interfaz tun0 con una IP asignada por HTB.
+
+   <img width="886" height="348" alt="image" src="https://github.com/user-attachments/assets/e6fa170e-5fa1-4393-8b71-7fb747ce3723" />
+
+
 
    
 
