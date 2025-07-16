@@ -203,9 +203,9 @@
 
 ### 14. Túnel SSH hacia Eureka 
 
-    Al ejecutar ss -tlnp | grep LISTEN dentro de la máquina Eureka, encontramos que el puerto 8761 está en escucha desde cualquier interfaz (*:8761). Este puerto corresponde al servicio Eureka (Service Discovery     de Spring Cloud).
+   Al ejecutar ss -tlnp | grep LISTEN dentro de la máquina Eureka, encontramos que el puerto 8761 está en escucha desde cualquier interfaz (*:8761). Este puerto corresponde al servicio Eureka (Service Discovery     de Spring Cloud).
 
-    Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
+   Para interactuar con este servicio desde fuera de la máquina, creamos un túnel SSH desde nuestra máquina Kali:
 
     ```bash
     ssh -N -L 8761:localhost:8761 oscar190@furni.htb
@@ -215,9 +215,9 @@
 
    Ahora accedemos al panel Eureka, abrimos el navegador en:
 
-   ```bash
-   http://localhost:8761
-   ```
+    ```bash
+    http://localhost:8761
+    ```
 
    Podemos ver el panel de Eureka Server, aqui están registrados los microservicios. 
    
