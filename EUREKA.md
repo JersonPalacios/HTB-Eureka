@@ -48,7 +48,7 @@
 
 ### 5. Confirmación de conección
 
-    Una vez conectado, podemos confirmar que estamos en la red de HTB usando:
+   Una vez conectado, podemos confirmar que estamos en la red de HTB usando:
 
    ```bash
    ip a 
@@ -70,7 +70,7 @@
 
 ### 7. Configuramos el dominio en /etc/hosts
 
-   Como observamos en el resultado del escaneo con nmap, el servidor HTTP hace un redireccionamiento a ´http://furni.htb´. Para que este dominio sea reconocible en nuestra máquina local (Kali Linux), debemos         añadirlo al archivo ´/etc/hosts´ apuntando a la IP de la máquina:
+   Como observamos en el resultado del escaneo con nmap, el servidor HTTP hace un redireccionamiento a http://furni.htb. Para que este dominio sea reconocible en nuestra máquina local (Kali Linux), debemos          añadirlo al archivo ´/etc/hosts´ apuntando a la IP de la máquina:
 
    ```bash
    sudo nano /etc/hosts
@@ -84,6 +84,20 @@
 
    <img width="1287" height="201" alt="image" src="https://github.com/user-attachments/assets/3f87c6fc-2b90-4d24-ba2b-a3fb07adbc0f" />
 
+### 8. Accedemos al sitio web
+
+   Una vez añadido el dominio, abrimos nuestro navegador en Kali y visitamos:
+
+   ```bash
+   http://furni.htb
+   ```
+
+   Ahora veremos una página web de una tienda de muebles con interfaz moderna. 
+   
+   <img width="886" height="460" alt="image" src="https://github.com/user-attachments/assets/7c46377f-8844-490a-a0b6-9184e8c2b5f4" />
+
+
+   A continuación exploraremos este sitio y realizaremos un análisis de directorios para descubrir posibles rutas ocultas.
 
 
 
