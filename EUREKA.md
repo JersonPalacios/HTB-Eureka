@@ -124,17 +124,17 @@
 
 ### 11. Enumeación de rutas ocultas:
 
-    Tenemos que tener en cuenta que muchos frameworks modernos como **Spring Boot** exponen un conjunto de endpoints de monitoreo y administración bajo /actuator.
+   Tenemos que tener en cuenta que muchos frameworks modernos como **Spring Boot** exponen un conjunto de endpoints de monitoreo y administración bajo /actuator.
 
-    Por lo que ahora veremos si existe el panel de administrción de Spring Boot:
+   Por lo que ahora veremos si existe el panel de administrción de Spring Boot:
 
-    Primero creamos un pequeño wordlist para fuzzear posibles rutas sensibles:
+   Primero creamos un pequeño wordlist para fuzzear posibles rutas sensibles:
     
     ```bash
      echo -e "actuator\nactuator/env\nactuator/heapdump\nactuator/beans\nactuator/info\nactuator/metrics" > tiny.txt
     ```
 
-    y luego lanzamos ´ffuf´ contra 'furni.htb´
+   y luego lanzamos ´ffuf´ contra 'furni.htb´
 
     ```bash
      ffuf -u http://furni.htb/FUZZ -w tiny.txt -o ffuf_actuator.txt
