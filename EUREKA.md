@@ -82,7 +82,8 @@
    10.10.11.66 furni.htb
    ```
 
-   <img width="886" height="444" alt="image" src="https://github.com/user-attachments/assets/ad5baeb1-6c3d-4729-be16-d0ce86557685" />
+   <img width="1287" height="201" alt="image" src="https://github.com/user-attachments/assets/3f87c6fc-2b90-4d24-ba2b-a3fb07adbc0f" />
+
 
 
 
